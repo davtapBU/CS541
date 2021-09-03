@@ -21,12 +21,19 @@ class ViewController: UIViewController {
         }
     }
 
+    let url = URL(string: "http://www.weather.com")!
+    
     // Enable detection of shake motion
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            let alertController = UIAlertController(title: "Ah!", message: "Don't shake me!", preferredStyle: UIAlertController.Style.alert)
-            alertController.addAction(UIAlertAction(title: "Sorry", style: UIAlertAction.Style.default, handler: nil))
-            present(alertController, animated: true, completion: nil)
+            //let alertController = UIAlertController(title: "Ah!", message: "Don't shake me!", preferredStyle: UIAlertController.Style.alert)
+           // alertController.addAction(UIAlertAction(title: "Sorry", style: UIAlertAction.Style.default, handler: nil))
+           // present(alertController, animated: true, completion: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         }
     }
     
