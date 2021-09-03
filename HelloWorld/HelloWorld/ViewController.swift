@@ -12,6 +12,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.becomeFirstResponder()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+
+    // Enable detection of shake motion
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            let alertController = UIAlertController(title: "Ah!", message: "Don't shake me!", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Sorry", style: UIAlertAction.Style.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBOutlet var mySwitch : UISwitch!
@@ -41,6 +57,5 @@ class ViewController: UIViewController {
             myButton.setTitle("🌙", for: .normal)
         }
     }
-
 }
 

@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iV2-GY-jYp">
-                                <rect key="frame" x="167" y="400" width="80" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iV2-GY-jYp">
+                                <rect key="frame" x="169.5" y="400" width="75" height="96"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <state key="normal" title="☀️">
                                     <color key="titleShadowColor" systemColor="systemYellowColor"/>
@@ -27,9 +26,8 @@
                                     <action selector="showMessageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gg3-ht-aim"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xla-Zj-NrZ">
-                                <rect key="frame" x="184" y="618" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xla-Zj-NrZ">
+                                <rect key="frame" x="182.5" y="582.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="changeThemeWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="opd-yM-Nqi"/>
                                 </connections>
@@ -37,6 +35,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="iV2-GY-jYp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1I9-52-RAW"/>
+                            <constraint firstItem="xla-Zj-NrZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="4wQ-xI-fro"/>
+                            <constraint firstItem="iV2-GY-jYp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DR5-af-tGp"/>
+                            <constraint firstItem="xla-Zj-NrZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gem-j1-nBd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myButton" destination="iV2-GY-jYp" id="Xxe-nK-VpN"/>
