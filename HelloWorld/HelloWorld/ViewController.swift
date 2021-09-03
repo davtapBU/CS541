@@ -18,17 +18,27 @@ class ViewController: UIViewController {
     @IBOutlet var myButton : UIButton!
 
     @IBAction func showMessage(sender: UIButton) {
-        let alertController = UIAlertController(title: "This app is lit", message: "Hello World!", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        present(alertController, animated: true, completion: nil)
+        if mySwitch.isOn {
+            let alertController = UIAlertController(title: "Alert", message: "Hello World!", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
+        
+        else {
+            let alertController = UIAlertController(title: "Alert", message: "Goodnight World!", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func changeTheme(sender: UISwitch) {
         if mySwitch.isOn {
             self.view.backgroundColor = UIColor.systemTeal
+            myButton.setTitle("☀️", for: .normal)
         }
         else {
             self.view.backgroundColor = UIColor.systemIndigo
+            myButton.setTitle("🌙", for: .normal)
         }
     }
 
